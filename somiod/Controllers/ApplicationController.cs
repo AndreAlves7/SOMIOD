@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace somiod.Controllers
 {
@@ -122,5 +123,16 @@ namespace somiod.Controllers
             return View("ContainerDataIndex", dataRecords);
         }
 
+        [HttpGet]
+        public ActionResult Discover()
+        {
+            if (Request.Headers["somiod-discover"] == "application")
+            {
+                var applicationNames = applications.Select(app => app.Name).ToList();
+                return Json(applicationNames, JsonRequestBehavior.AllowGet);
+            }
+
+            return HttpNotFound();
+        }
     }
 }

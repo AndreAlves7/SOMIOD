@@ -1,2 +1,0 @@
-C:\Users\andre\source\repos\somiod\somiod\obj\Debug\somiod.csproj.AssemblyReference.cache
-C:\Users\andre\source\repos\somiod\somiod\obj\Debug\somiod.csproj.CoreCompileInputs.cache

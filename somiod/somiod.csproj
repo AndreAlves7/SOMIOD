@@ -438,6 +438,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="packages\C1.AspNetCore.Api.6.0.20233.331\icon.png" />
@@ -698,6 +702,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\web.config" />
     <Content Include="packages\C1.AspNetCore.Api.6.0.20233.331\.signature.p7s" />
     <Content Include="packages\C1.AspNetCore.Api.6.0.20233.331\buildTransitive\net6.0\C1.AspNetCore.Api.targets" />
     <Content Include="packages\C1.AspNetCore.Api.6.0.20233.331\buildTransitive\net8.0\C1.AspNetCore.Api.targets" />
@@ -760,10 +768,6 @@
     <Content Include="packages\Newtonsoft.Json.12.0.2\Newtonsoft.Json.12.0.2.nupkg" />
     <Content Include="packages\Owin.1.0\.signature.p7s" />
     <Content Include="packages\Owin.1.0\Owin.1.0.nupkg" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -772,7 +776,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="bin\" />
     <Folder Include="Data\" />
     <Folder Include="Views\Application\" />
