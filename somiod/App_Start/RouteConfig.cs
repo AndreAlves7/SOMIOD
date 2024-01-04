@@ -15,9 +15,26 @@ namespace somiod
 
             routes.MapRoute(
              name: "Default",
-             url: "{controller}/{action}/{applicationName}/{containerName}",
-             defaults: new { controller = "Home", action = "Index", applicationName = UrlParameter.Optional, containerName = UrlParameter.Optional }
+             url: "api/somiod/{applicationName}/{containerName}",
+             defaults: new { applicationName = UrlParameter.Optional, containerName = UrlParameter.Optional }
          );
+
+            routes.MapRoute(
+             name: "Data",
+             url: "api/somiod/{applicationName}/{containerName}/data/{dataName}",
+             defaults: new { applicationName = UrlParameter.Optional, 
+                 containerName = UrlParameter.Optional,
+                 dataName = UrlParameter.Optional }
+        );
+
+            routes.MapRoute(
+             name: "Subscription",
+             url: "api/somiod/{applicationName}/{containerName}/sub/{subName}",
+             defaults: new { applicationName = UrlParameter.Optional,
+                 containerName = UrlParameter.Optional,
+                 subName = UrlParameter.Optional }
+        );
+
         }
     }
 }
