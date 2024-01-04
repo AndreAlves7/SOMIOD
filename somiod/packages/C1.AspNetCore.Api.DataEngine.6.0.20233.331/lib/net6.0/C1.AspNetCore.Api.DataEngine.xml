@@ -1,0 +1,578 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>C1.AspNetCore.Api.DataEngine</name>
+    </assembly>
+    <members>
+        <member name="T:C1.Web.Api.DataEngine.DataEngineController">
+            <summary>
+            The data engine controller.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.DataEngineController.GetFields(System.String)">
+            <summary>
+            Gets all the fields information defined in the data.
+            </summary>
+            <param name="dataSourceKey">The data source key specifies the data.</param>
+            <returns>The field list and the total data count.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.DataEngineController.GetRawData(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Gets the raw data.
+            </summary>
+            <param name="dataSourceKey">The data source key specifies the data.</param>
+            <param name="skip">A number value which is used to exclude the first n entities. n is specified by this value</param>
+            <param name="top">A number value which indicates the count of the data requested.</param>
+            <returns>The raw data and the total count of all the raw data.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.DataEngineController.AnalyzeData(System.String,C1.Web.Api.DataEngine.Models.EngineRequest)">
+            <summary>
+            Analyzes the data.
+            </summary>
+            <param name="dataSourceKey">The data source key specifies the data.</param>
+            <param name="er">The engine request.</param>
+            <returns>The analysis result information.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.DataEngineController.GetDetail(System.String,C1.Web.Api.DataEngine.Models.DetailRequest)">
+            <summary>
+            Gets a list of objects in the raw data source that define the content 
+            of a specific cell in the output table.
+            </summary>
+            <param name="dataSourceKey">The data source key specifies the data.</param>
+            <param name="er">The request for the cell detail raw data.</param>
+            <returns>
+            The raw data which the cell includes and the total count of the cell raw data.
+            </returns>
+            <remarks>Now only the DataEngine data and the in-memory data support this action. The cube data doesn't support it.</remarks>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.DataEngineController.GetUniqueValues(System.String,System.String,C1.Web.Api.DataEngine.Models.EngineRequest)">
+            <summary>
+            Gets the unique values of a field.
+            </summary>
+            <param name="dataSourceKey">The data source key specifies the data.</param>
+            <param name="fieldname">The key of the field which unique values you want to get.</param>
+            <param name="er">The engine request.</param>
+            <returns>The unique value list.</returns>
+            <remarks>Now only the DataEngine data and the in-memory data support this action. The cube data doesn't support it.</remarks>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.DataEngineController.GetAnalysisResult(System.String,System.String)">
+            <summary>
+            Gets the analysis result data.
+            </summary>
+            <param name="dataSourceKey">The data source key specifies the data.</param>
+            <param name="token">The key specifies the analysis instance.</param>
+            <returns>The analysis result data.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.DataEngineController.GetAnalysisStatus(System.String,System.String)">
+            <summary>
+            Gets the analysis status.
+            </summary>
+            <param name="dataSourceKey">The data source key specifies the data.</param>
+            <param name="token">The key specifies the analysis instance.</param>
+            <returns>The status.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.DataEngineController.GetAnalysis(System.String,System.String)">
+            <summary>
+            Gets the analysis information.
+            </summary>
+            <param name="dataSourceKey">The data source key specifies the data.</param>
+            <param name="token">The key specifies the analysis instance.</param>
+            <returns>The analysis result information.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.DataEngineController.RemoveAnalysis(System.String,System.String)">
+            <summary>
+            Remove the analysis.
+            </summary>
+            <param name="dataSourceKey">The data source key specifies the data.</param>
+            <param name="token">The key specifies the analysis instance.</param>
+            <returns>The response for this request.</returns>
+        </member>
+        <member name="T:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager">
+            <summary>
+            The aggregated data provider manager.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager.AddCube(System.String,System.String,System.String)">
+            <summary>
+            Adds a cube data.
+            </summary>
+            <param name="name">The unique value used to stand for the data.</param>
+            <param name="connectionString">The connection string for the cube data.</param>
+            <param name="cubeName">Specify the cube name in the cube data.</param>
+            <returns>The flex pivot engine provider manager.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager.AddDataEngine(System.String,System.String,System.String)">
+            <summary>
+            Adds a DataEngine data which data files already exist.
+            </summary>
+            <param name="name">The unique value used to stand for the data source.</param>
+            <param name="workspace">
+            Path in the server's file system where DataEngine data files locate.
+            </param>
+            <param name="tableName">
+            The name of the DataEngine table.
+            </param>
+            <returns>The flex pivot engine provider manager.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager.AddDataEngine(System.String,System.Data.Common.DbCommand,System.Data.Common.DbConnection,System.String,System.String)">
+            <summary>
+            Adds a DataEngine data from a database.
+            </summary>
+            <param name="name">The unique value used to stand for the data source.</param>
+            <param name="command">ADO.NET command object for retrieving data from the database. The connection in the command should be open.</param>
+            <param name="connection">An open ADO.NET connection object for connecting to the database.</param>
+            <param name="workspace">
+            Path in the server's file system where DataEngine data is saved in files.
+            If it is set to null or not set, the default workspace is used.
+            The default workspace path is "application base path + /Data".
+            You can change it via the <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.SetDefaultWorkspacePath(string path) method.
+            </param>
+            <param name="tableName">
+            The name of the DataEngine table.
+            If it is set to null or not set, the value of the name parameter is used.
+            </param>
+            <returns>The flex pivot engine provider manager.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager.AddDataEngine``1(System.String,System.Func{System.Collections.Generic.IEnumerable{``0}},System.String,System.String)">
+            <summary>
+            Adds a DataEngine data from an arbitrary IEnumerable.
+            </summary>
+            <param name="name">The unique value used to stand for the data source.</param>
+            <param name="dataGetter">A function to get an arbitrary IEnumerable.</param>
+            <param name="workspace">
+            Path in the server's file system where DataEngine data is saved in files.
+            If it is set to null or not set, the default workspace is used.
+            The default workspace path is "application base path + /Data".
+            You can change it via the <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.SetDefaultWorkspacePath(string path) method.
+            </param>
+            <param name="tableName">
+            The name of the DataEngine table.
+            If it is set to null or not set, the value of the name parameter is used.
+            </param>
+            <returns>The flex pivot engine provider manager.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager.AddDataSource(System.String,System.Func{System.Collections.IEnumerable})">
+            <summary>
+            Adds a DataSource data from an arbitrary IEnumerable.
+            </summary>
+            <param name="name">The unique value used to stand for the data.</param>
+            <param name="dataSourceGetter">A function used to return the arbitrary IEnumerable.</param>
+            <returns>The flex pivot engine provider manager.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager.AddDataSource(System.String,System.Collections.IEnumerable)">
+            <summary>
+            Adds a DataSource data from an arbitrary IEnumerable.
+            </summary>
+            <param name="name">The unique value used to stands for the data.</param>
+            <param name="dataSource">The arbitrary IEnumerable.</param>
+            <returns>The flex pivot engine provider manager.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager.GetFieldsFromRDMeta(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Gets the fields from the meta of the DataEngine data and the DataSource data.
+            </summary>
+            <param name="metaData">The meta data.</param>
+            <returns>A field collection.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager.GetFieldsFromCubeMeta(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Gets the cube fields from the meta of the cube data.
+            </summary>
+            <param name="metaData">The meta data.</param>
+            <returns>A field collection.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager.DisposeWorkspace(System.String)">
+            <summary>
+            Disposes the specified workspace and cancel all related tasks.
+            </summary>
+            <param name="path">The path of the workspace to be disposed.</param>
+            <remarks>
+            It only works when analyzing a DataEngine data.
+            If the path is not set, the default workspace will be disposed.
+            Please be careful and ensure you DO want to dispose the workspace when you will call this method.
+            It will cancel all running tasks (if any exists) with the specified workspace and remove locks from files.
+            So after calling this method, you will be able to delete them.
+            </remarks>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager.SetDataEngineAnalysisResultMaxCount(System.Int32)">
+            <summary>
+            Sets the max count of the analysis result data.
+            </summary>
+            <param name="maxCount">The max count.</param>
+            <remarks>
+            When the count of the analysis result data exceeds maxCount, an exception would be thrown.
+            When maxCount is not set, the count is not limited.
+            Normally an integer which is not lower than zero can be set to maxCount.
+            If a negative integer is set to maxCount, the count is not limited.
+            </remarks>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager.SetDefaultWorkspacePath(System.String)">
+            <summary>
+            Sets the default workspace path for the DataEngine data.
+            </summary>
+            <param name="path">The path of the default workspace.</param>
+        </member>
+        <member name="T:C1.Web.Api.DataEngine.Data.IFlexPivotEngineProvider">
+            <summary>
+            The flex pivot engine provider interface.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Data.IFlexPivotEngineProvider.Fields">
+            <summary>
+            Gets the field collection defined in the data source.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Data.IFlexPivotEngineProvider.RawData">
+            <summary>
+            Get the entire raw source data.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.IFlexPivotEngineProvider.GetUniqueValues(System.Collections.Generic.Dictionary{System.String,System.Object},System.String)">
+            <summary>
+            Gets the unqiue values of the specified field.
+            </summary>
+            <param name="view">View definition used for performing aggregation.</param>
+            <param name="fieldName">The name of the field to provide unique values for.</param>
+            <returns>Collection of objects with properties Name (string) and Type (System.Type)</returns>
+            <remarks>
+            The user should be aware that getting value list can take considerable time if number of rows in the source data is very large.
+            </remarks>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.IFlexPivotEngineProvider.GetDetail(System.Collections.Generic.Dictionary{System.String,System.Object},System.Object[])">
+            <summary>
+            Gets the source data rows used in obtaining a given aggregated value.
+            </summary>
+            <param name="view">View definition used for performing aggregation.</param>
+            <param name="key">Key values specifying the aggregated value (subtotal)./></param>
+            <returns>List of source data objects that contributed to the given aggregation value.</returns>
+            <remarks>
+            It is recommended to use paging providing source data to the clients, because a DataEngine table can have a very large number of rows and aggregating a subtotal can involve a considerable part of all rows.
+            </remarks>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Data.IFlexPivotEngineProvider.GetAggregatedData(System.Collections.Generic.Dictionary{System.String,System.Object},System.Threading.CancellationTokenSource,System.Action{System.Int32})">
+            <summary>
+            Gets the aggregated results according to the given view in an asynchronous execution
+            </summary>
+            <param name="view">View definition used for performing aggregation.</param>
+            <param name="cancelSource">The cancellation token source.</param>
+            <param name="progress">A callback function to report analysis progress.</param>
+            <returns>View execution (aggregation) result</returns>
+        </member>
+        <member name="T:C1.Web.Api.DataEngine.LicenseDetector">
+            <summary>
+            Define a class for detecting C1.Web.Api.DataEngine license.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.LicenseDetector.#ctor">
+            <summary>
+            The constructor.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.DataEngine.Localization.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.AppLicenseEvalValid">
+            <summary>
+              Looks up a localized string similar to Trial license, {0} days left..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.AppLicenseExpiredEval">
+            <summary>
+              Looks up a localized string similar to Your trial license is expired..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.AppLicenseExpiredFull">
+            <summary>
+              Looks up a localized string similar to Your license is expired..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.AppLicenseFullValid">
+            <summary>
+              Looks up a localized string similar to Valid license, {0} days left..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.AppLicenseInvalidCert">
+            <summary>
+              Looks up a localized string similar to Invalid certificate..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.AppLicenseNotSet">
+            <summary>
+              Looks up a localized string similar to Please set a valid license key by setting LicenseManager.Key..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.AppLicenseUnknown">
+            <summary>
+              Looks up a localized string similar to Unknown license..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.CommandNotSupported">
+            <summary>
+              Looks up a localized string similar to The command &quot;{0}&quot; is not supported..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.EvaluationMessage">
+            <summary>
+              Looks up a localized string similar to ComponentOne ASP.NET Web API (Evaluation Version).
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.OperationBeingExcuted">
+            <summary>
+              Looks up a localized string similar to The operation is executing, please try it later..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.OperationCancelled">
+            <summary>
+              Looks up a localized string similar to The operation is cancelled..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.ViewNotNull">
+            <summary>
+              Looks up a localized string similar to View cannot be null..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Localization.Resources.AggregatedResultOutOfRange">
+            <summary>
+              Looks up a localized string similar to The aggregated result count is larger than {0}. Please increase the value of {1}..
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.DataEngine.Models.DataType">
+            <summary>
+            Enumeration with value types.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.DataEngine.Models.DataType.Object">
+            <summary>
+            Anything except string, number, boolean, date, time and array.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.DataEngine.Models.DataType.String">
+            <summary>
+            A text.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.DataEngine.Models.DataType.Number">
+            <summary>
+            A number.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.DataEngine.Models.DataType.Boolean">
+            <summary>
+            A boolean.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.DataEngine.Models.DataType.Date">
+            <summary>
+            A date or time.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.DataEngine.Models.DataType.Array">
+            <summary>
+            An array.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.DataEngine.Models.DetailRequest">
+            <summary>
+            Defines the class for the request of the cell detail data.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.DetailRequest.Keys">
+            <summary>
+            Gets or sets a <see cref="T:System.Object"/> array, which is used to specify some cell.
+            </summary>
+            <remarks>
+            Firstly, you need add the values of the fields in rowFields in order into keys.
+            Then add the values of the fields in columnFields in order.
+            If some field value is null, JUST add null into array and DO NOT remove it.
+            ou should keep the count of the keys array same as the count of the fields in rowFields and columnFields. 
+            </remarks>
+        </member>
+        <member name="T:C1.Web.Api.DataEngine.Models.EngineRequestWithPaging">
+            <summary>
+            Defines the class for the engine request with paging.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.EngineRequestWithPaging.Skip">
+            <summary>
+            Get or sets a <see cref="T:System.Int32"/>, which is used to exclude the first n entities. n is specified by this value.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.EngineRequestWithPaging.Top">
+            <summary>
+            Gets or sets a <see cref="T:System.Int32"/>, which indicates the count of the data requested.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Models.EngineRequestWithPaging.#ctor(C1.Web.Api.DataEngine.Models.EngineRequest)">
+            <summary>
+            Create a <see cref="T:C1.Web.Api.DataEngine.Models.EngineRequestWithPaging"/> instance according to the specified <see cref="T:C1.Web.Api.DataEngine.Models.EngineRequest"/> instance.
+            </summary>
+            <param name="er">The <see cref="T:C1.Web.Api.DataEngine.Models.EngineRequest"/> instance.</param>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Models.EngineRequestWithPaging.#ctor">
+            <summary>
+            Create a <see cref="T:C1.Web.Api.DataEngine.Models.EngineRequestWithPaging"/> instance.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.DataEngine.Models.EngineRequest">
+            <summary>
+            Defines the class for the engine request.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.EngineRequest.AnalysisToken">
+            <summary>
+            Gets or sets the analysis token.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.EngineRequest.View">
+            <summary>
+            Gets or sets a <see cref="T:System.String"/>, which indicates the view definition.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.EngineRequest.FieldName">
+            <summary>
+            Specifies the field which you want to get the unique values.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.DataEngine.Models.ExecutingStatus.NotSet">
+            <summary>
+            The operation is not executed. It is default.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.DataEngine.Models.ExecutingStatus.Executing">
+            <summary>
+            The analysis is still executing.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.DataEngine.Models.ExecutingStatus.Exception">
+            <summary>
+            Some errors occur during executing the analysis.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.DataEngine.Models.ExecutingStatus.Completed">
+            <summary>
+            The analysis is finished.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.DataEngine.Models.ExecutingStatus.Cleared">
+            <summary>
+            The analysis is removed.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.DataEngine.Models.Field">
+            <summary>
+            The field class.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.Field.Header">
+            <summary>
+            Gets or sets a text to be displayed in the user interface.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.Field.Binding">
+            <summary>
+            Gets or sets the name of the source column which the field is bound to.
+            </summary>
+            <remarks>
+            It only works when connecting DataEngine or DataSource.
+            </remarks>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.Field.DataType">
+            <summary>
+            Gets or sets the data type of the field.
+            </summary>
+            <remarks>
+            It only works when connecting DataEngine or DataSource.
+            </remarks>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.Field.DimensionType">
+            <summary>
+            Gets or sets the dimension type of the field.
+            </summary>
+            <remarks>
+            It works when connecting a cube data.
+            </remarks>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.Field.SubFields">
+            <summary>
+            Gets the child fields.
+            </summary>
+            <remarks>
+            It only works when connecting a cube data.
+            </remarks>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.Field.Lookup">
+            <summary>
+            Gets or sets the lookup values for this field.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Models.Field.ShouldSerializeSubFields">
+            <summary>
+            Specifies whether the SubFields property should be serialized.
+            </summary>
+            <returns>If true, the property should be serialized. Otherwise, it should not be serialized.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Models.Field.ConvertFromRDField(System.Object)">
+            <summary>
+            Convert the field generated from the DataEngine data and the in-memory data to a <see cref="T:C1.Web.Api.DataEngine.Models.Field"/> instance.
+            </summary>
+            <param name="oField">The field data.</param>
+            <returns>A <see cref="T:C1.Web.Api.DataEngine.Models.Field"/> instance.</returns>
+        </member>
+        <member name="M:C1.Web.Api.DataEngine.Models.Field.ConvertFromCubeField(System.Object)">
+            <summary>
+            Converts the field generated from the cube data to a <see cref="T:C1.Web.Api.DataEngine.Models.Field"/> object.
+            </summary>
+            <param name="oField">The field data.</param>
+            <returns>A <see cref="T:C1.Web.Api.DataEngine.Models.Field"/> instance</returns>
+        </member>
+        <member name="T:C1.Web.Api.DataEngine.Models.IRawData">
+            <summary>
+            Defines the interface for the returned raw data.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.IRawData.Value">
+            <summary>
+            The raw data.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.DataEngine.Models.IRawData.TotalCount">
+            <summary>
+            The total count of all the raw data.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Builder.AppBuilderUseExtensions">
+            <summary>
+            Extension methods for <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.AppBuilderUseExtensions.UseDataEngineProviders(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Use <see cref="T:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager"/>.
+            </summary>
+            <returns>The <see cref="T:C1.Web.Api.DataEngine.Data.FlexPivotEngineProviderManager"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.AppBuilderUseExtensions.SetDataEngineAnalysisResultMaxCount(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Int32)">
+            <summary>
+            Sets the max count of the analysis result data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.AppBuilderUseExtensions.SetDefaultWorkspacePath(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String)">
+            <summary>
+            Sets the default workspace path for the DataEngine data.
+            </summary>
+        </member>
+    </members>
+</doc>

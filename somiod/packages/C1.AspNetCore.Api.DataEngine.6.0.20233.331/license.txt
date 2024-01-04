@@ -1,0 +1,14 @@
+Copyright (c) MESCIUS inc.
+
+The End User License Agreement ("EULA") contains the terms and conditions that
+govern Your use of MESCIUS inc. ("MESCIUS")(formerly known as GrapeCity, Inc.) 
+ComponentOne SOFTWARE enclosed or otherwise
+accompanied herewith (individually and collectively, the "SOFTWARE") (as linked
+to below) and imposes material limitations on Your License. You should read
+this EULA carefully and treat it as valuable property.
+
+You may obtain a complete copy of the EULA at:
+https://www.grapecity.com/legal/eula
+
+Licensing FAQs:
+https://www.grapecity.com/componentone/licensing

@@ -1,0 +1,1522 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>C1.AspNetCore.Api</name>
+    </assembly>
+    <members>
+        <member name="M:C1.AspNetCore.Api.ImageFormat.#ctor(System.Guid)">
+            <summary>
+               Initializes a new instance of the <see cref='!:System.Drawing.Imaging.ImageFormat'/> class with the specified GUID.
+            </summary>
+        </member>
+        <member name="P:C1.AspNetCore.Api.ImageFormat.Guid">
+            <summary>
+               Specifies a global unique identifier (GUID)
+               that represents this <see cref='!:System.Drawing.Imaging.ImageFormat'/>.
+            </summary>
+        </member>
+        <member name="P:C1.AspNetCore.Api.ImageFormat.Bmp">
+            <summary>
+               Specifies the bitmap image format.
+            </summary>
+        </member>
+        <member name="P:C1.AspNetCore.Api.ImageFormat.Gif">
+            <summary>
+               Specifies the GIF image format.
+            </summary>
+        </member>
+        <member name="P:C1.AspNetCore.Api.ImageFormat.Jpeg">
+            <summary>
+               Specifies the JPEG image format.
+            </summary>
+        </member>
+        <member name="P:C1.AspNetCore.Api.ImageFormat.Png">
+            <summary>
+               <para>
+                  Specifies the W3C PNG image format.
+               </para>
+            </summary>
+        </member>
+        <member name="P:C1.AspNetCore.Api.ImageFormat.Tiff">
+            <summary>
+               Specifies the Tag Image File
+               Format (TIFF) image format.
+            </summary>
+        </member>
+        <member name="M:C1.AspNetCore.Api.ImageFormat.Equals(System.Object)">
+            <!-- Failed to insert some or all of included XML --><include file="doc\ImageFormat.uex" path="docs/doc[@for=&quot;ImageFormat.Equals&quot;]/*" />
+            <summary>
+               Returns a value indicating whether the
+               specified object is an <see cref="!:System.Drawing.Imaging.ImageFormat" /> equivalent to this <see cref="!:System.Drawing.Imaging.ImageFormat" />.
+            </summary>
+        </member>
+        <member name="M:C1.AspNetCore.Api.ImageFormat.GetHashCode">
+            <!-- Failed to insert some or all of included XML --><include file="doc\ImageFormat.uex" path="docs/doc[@for=&quot;ImageFormat.GetHashCode&quot;]/*" />
+            <summary>
+               <para>
+                  Returns a hash code.
+               </para>
+            </summary>
+        </member>
+        <member name="M:C1.AspNetCore.Api.ImageFormat.ToString">
+            <summary>
+               Converts this <see cref='!:System.Drawing.Imaging.ImageFormat'/> to a human-readable string.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.BodyModelBinder`1">
+            <summary>
+            ModelBinder that reads information from the Request.Body. Please be aware that
+            it is only safe to read the Request's Body one time.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.BodyModelBinder`1.BindModelAsync(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext)">
+            <summary>
+            Binds the model to a value by using the binding context.
+            </summary>
+            <param name="bindingContext">The binding context.</param>
+            <returns>The binding result.</returns>
+        </member>
+        <member name="T:C1.Web.Api.C1ApiController">
+            <summary>
+            Defines the base class for the api controller.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.C1ApiController.Formatters">
+            <summary>
+            Gets the media-type formatters for this instance.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.Location(System.Linq.Expressions.Expression{System.Func{System.Func{Microsoft.AspNetCore.Mvc.IActionResult}}},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Returns an absolute url for the specified action.
+            </summary>
+            <param name="expression">The expression which returns the function of calling the action method.</param>
+            <param name="values">The dictionary that contains the parameters for the action.</param>
+            <returns>The absolute url for the specified action.</returns>
+            <example>
+            Location(()=>this.Action);
+            </example>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.Location``1(System.Linq.Expressions.Expression{System.Func{System.Func{``0,Microsoft.AspNetCore.Mvc.IActionResult}}},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Returns an absolute url for the specified action.
+            </summary>
+            <param name="expression">The expression which returns the function of calling the action method.</param>
+            <param name="values">The dictionary that contains the parameters for the action.</param>
+            <returns>The absolute url for the specified action.</returns>
+            <example>
+            Location&lt;string&gt;(()=>this.Action);
+            </example>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.Location``2(System.Linq.Expressions.Expression{System.Func{System.Func{``0,``1,Microsoft.AspNetCore.Mvc.IActionResult}}},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Returns an absolute url for the specified action.
+            </summary>
+            <param name="expression">The expression which returns the function of calling the action method.</param>
+            <param name="values">The dictionary that contains the parameters for the action.</param>
+            <returns>The absolute url for the specified action.</returns>
+            <example>
+            Location&lt;string, string&gt;(()=>this.Action);
+            </example>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.Location``3(System.Linq.Expressions.Expression{System.Func{System.Func{``0,``1,``2,Microsoft.AspNetCore.Mvc.IActionResult}}},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Returns an absolute url for the specified action.
+            </summary>
+            <param name="expression">The expression which returns the function of calling the action method.</param>
+            <param name="values">The dictionary that contains the parameters for the action.</param>
+            <returns>The absolute url for the specified action.</returns>
+            <example>
+            Location&lt;string, string, string&gt;(()=>this.Action);
+            </example>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.Location``4(System.Linq.Expressions.Expression{System.Func{System.Func{``0,``1,``2,``3,Microsoft.AspNetCore.Mvc.IActionResult}}},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Returns an absolute url for the specified action.
+            </summary>
+            <param name="expression">The expression which returns the function of calling the action method.</param>
+            <param name="values">The dictionary that contains the parameters for the action.</param>
+            <returns>The absolute url for the specified action.</returns>
+            <example>
+            Location&lt;string, string, string, string&gt;(()=>this.Action);
+            </example>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.Location``5(System.Linq.Expressions.Expression{System.Func{System.Func{``0,``1,``2,``3,``4,Microsoft.AspNetCore.Mvc.IActionResult}}},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Returns an absolute url for the specified action.
+            </summary>
+            <param name="expression">The expression which returns the function of calling the action method.</param>
+            <param name="values">The dictionary that contains the parameters for the action.</param>
+            <returns>The absolute url for the specified action.</returns>
+            <example>
+            Location&lt;string, string, string, string, string&gt;(()=>this.Action);
+            </example>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.Location(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Returns an absolute url for the specified action.
+            </summary>
+            <param name="actionName">The name of the action.</param>
+            <param name="values">The dictionary that contains the parameters for the action.</param>
+            <returns>The absolute url for the specified action.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.Location(System.Reflection.MethodInfo,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Returns an absolute url for the specified action.
+            </summary>
+            <param name="methodInfo">The method for the action.</param>
+            <param name="values">The dictionary that contains the parameters for the action.</param>
+            <returns>The absolute url for the specified action.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.ProcessAction(System.Func{Microsoft.AspNetCore.Mvc.IActionResult})">
+            <summary>
+            Process the action by catching specific excepitions.
+            </summary>
+            <remarks>
+            The following exceptions will be handled:
+            <list type="bullet">
+            <item>
+            <term><see cref="T:C1.Web.Api.NotFoundException"/></term>
+            <description>Returns 404.</description>
+            </item>
+            <item>
+            <term><see cref="T:C1.Web.Api.NotAcceptableException"/></term>
+            <description>Returns 406.</description>
+            </item>
+            </list>
+            </remarks>
+            <param name="func">The function to process the action.</param>
+            <returns>The action result.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.SetJsonSettings(Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            Set Json formatter serializer settings.
+            </summary>
+            <param name="jsonSettings">The serializer settings of Json formatter</param>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.BadRequest(Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary)">
+            <summary>
+            Creates an Microsoft.AspNetCore.Mvc.BadRequestObjectResult that produces a Bad
+            Request (400) response.
+            </summary>
+            <returns>The created Microsoft.AspNetCore.Mvc.BadRequestObjectResult for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.BadRequest(System.Object)">
+            <summary>
+            Creates an Microsoft.AspNetCore.Mvc.BadRequestObjectResult that produces a Bad
+            Request (400) response.
+            </summary>
+            <returns>The created Microsoft.AspNetCore.Mvc.BadRequestObjectResult for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.Created(System.String,System.Object)">
+            <summary>
+            Creates a Microsoft.AspNetCore.Mvc.CreatedResult object that produces a Created
+            (201) response.
+            </summary>
+            <param name="uri">The URI at which the content has been created.</param>
+            <param name="value">The content value to format in the entity body.</param>
+            <returns>The created Microsoft.AspNetCore.Mvc.CreatedResult for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.Created(System.Uri,System.Object)">
+            <summary>
+            Creates a Microsoft.AspNetCore.Mvc.CreatedResult object that produces a Created
+            (201) response.
+            </summary>
+            <param name="uri">The URI at which the content has been created.</param>
+            <param name="value">The content value to format in the entity body.</param>
+            <returns>The created Microsoft.AspNetCore.Mvc.CreatedResult for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.CreatedAtAction(System.String,System.String,System.Object,System.Object)">
+            <summary>
+            Creates a Microsoft.AspNetCore.Mvc.CreatedAtActionResult object that produces
+            a Created (201) response.
+            </summary>
+            <param name="actionName">The name of the action to use for generating the URL.</param>
+            <param name="controllerName">The name of the controller to use for generating the URL.</param>
+            <param name="routeValues">The route data to use for generating the URL.</param>
+            <param name="value">The content value to format in the entity body.</param>
+            <returns>The created Microsoft.AspNetCore.Mvc.CreatedAtActionResult for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.CreatedAtRoute(System.String,System.Object,System.Object)">
+            <summary>
+            Creates a Microsoft.AspNetCore.Mvc.CreatedAtRouteResult object that produces
+            a Created (201) response.
+            </summary>
+            <param name="routeName">The name of the route to use for generating the URL.</param>
+            <param name="routeValues">The route data to use for generating the URL.</param>
+            <param name="value">The content value to format in the entity body.</param>
+            <returns>The created Microsoft.AspNetCore.Mvc.CreatedAtRouteResult for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.NotFound(System.Object)">
+            <summary>
+            Creates an Microsoft.AspNetCore.Mvc.NotFoundObjectResult that produces a Not
+            Found (404) response.
+            </summary>
+            <returns>The created Microsoft.AspNetCore.Mvc.NotFoundObjectResult for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.Ok(System.Object)">
+            <summary>
+            Creates an Microsoft.AspNetCore.Mvc.OkObjectResult object that produces an OK
+            (200) response.
+            </summary>
+            <param name="value">The content value to format in the entity body.</param>
+            <returns>The created Microsoft.AspNetCore.Mvc.OkObjectResult for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.StatusCode(System.Int32,System.Object)">
+            <summary>
+            Creates a Microsoft.AspNetCore.Mvc.ObjectResult object by specifying a statusCode
+            and value
+            </summary>
+            <param name="statusCode">The status code to set on the response.</param>
+            <param name="value">The value to set on the Microsoft.AspNetCore.Mvc.ObjectResult.</param>
+            <returns>The created Microsoft.AspNetCore.Mvc.ObjectResult object for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.InternalServerError(System.Exception)">
+            <summary>
+            Creates an <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> result that produces a NotFind (500) response.
+            </summary>
+            <param name="exception">The exception.</param>
+            <returns>A NotFind result for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.InternalServerError">
+            <summary>
+            Creates an <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> result that produces a NotFind (500) response.
+            </summary>
+            <returns>A NotFind result for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.File(System.Func{System.IO.Stream},System.String,System.String)">
+            <summary>
+            Returns a file in the specified fileStream with the file name and the file extension.
+            </summary>
+            <param name="streamGetter">The function to get a <see cref="T:System.IO.Stream"/> with the contents of the file.</param>
+            <param name="fileName">The file name.</param>
+            <param name="fileExtension">The file extension.</param>
+            <returns>A file result for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.File(System.Func{System.IO.Stream},System.String)">
+            <summary>
+            Returns a file in the specified fileStream with the full file name.
+            </summary>
+            <param name="streamGetter">The function to get a <see cref="T:System.IO.Stream"/> with the contents of the file.</param>
+            <param name="fullFileName">The file full name.</param>
+            <returns>A file result for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.Accept(System.String)">
+            <summary>
+            Creates an <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> result that produces an Accepted (202) response.
+            </summary>
+            <param name="statusLocation">Specifies the status location in the result.</param>
+            <returns>The Accepted result for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.C1ApiController.NotAcceptable">
+            <summary>
+            Creates an <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> result that produces a NotAcceptable (406) response.
+            </summary>
+            <returns>A NotAcceptable result for the response.</returns>
+        </member>
+        <member name="M:C1.Web.Api.XmlResult.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:C1.Web.Api.XmlResult"/> class.
+            </summary>
+            <param name="value">The object to serialize to XML.</param>
+        </member>
+        <member name="P:C1.Web.Api.XmlResult.Value">
+            <summary>
+            Gets the object to be serialized to XML.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.XmlResult.ExecuteResult(Microsoft.AspNetCore.Mvc.ActionContext)">
+            <summary>
+            Serialises the object that was passed into the constructor to XML and writes the corresponding XML to the result stream.
+            </summary>
+            <param name="context">The controller context for the current request.</param>
+        </member>
+        <member name="T:C1.Web.Api.ExporterResult">
+            <summary>
+            The IActionResult for exporting.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.ExporterResult.ExportSource">
+            <summary>
+            Gets the exporting model.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.ExporterResult.#ctor(C1.Web.Api.ExportSource)">
+            <summary>
+            Creates the ExporterResult instance.
+            </summary>
+            <param name="source">The exporting model.</param>
+        </member>
+        <member name="T:C1.Web.Api.IExporter">
+            <summary>
+            Common interface for all exporters to share.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.IExporter.ExportAsync(System.Object,System.IO.Stream)">
+            <summary>
+            Execute exporting task asynchronously.
+            </summary>
+            <param name="exportSource">The export source.</param>
+            <param name="outputStream">The output stream.</param>
+            <returns></returns>
+        </member>
+        <member name="T:C1.Web.Api.IExporter`1">
+            <summary>
+            Common generic interface for all exporters to share.
+            </summary>
+            <typeparam name="T">Type of ExportSource.</typeparam>
+        </member>
+        <member name="M:C1.Web.Api.IExporter`1.ExportAsync(`0,System.IO.Stream)">
+            <summary>
+            Execute exporting task asynchronously.
+            </summary>
+            <param name="exportSource">The export source.</param>
+            <param name="outputStream">The output stream.</param>
+            <returns>The task.</returns>
+        </member>
+        <member name="T:C1.Web.Api.IImporter`2">
+            <summary>
+            Common generic interface for all importers to share.
+            </summary>
+            <typeparam name="TSource">Type of ImportSource.</typeparam>
+            <typeparam name="TResult">Type of import result.</typeparam>
+        </member>
+        <member name="M:C1.Web.Api.IImporter`2.ImportAsync(`0)">
+            <summary>
+            Execute importing task asynchronously.
+            </summary>
+            <param name="importSource">The import source.</param>
+            <returns>The task.</returns>
+        </member>
+        <member name="T:C1.Web.Api.FormFile">
+            <summary>
+            This class defines the file from form post.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.FormFile.#ctor(System.IO.Stream,System.String)">
+            <summary>
+            Create a FormFile with specified stream and file extension.
+            </summary>
+            <param name="stream">The file stream</param>
+            <param name="extension">The file extension</param>
+        </member>
+        <member name="M:C1.Web.Api.FormFile.GetStream">
+            <summary>
+            Gets the file stream.
+            </summary>
+            <returns>The file stream</returns>
+        </member>
+        <member name="P:C1.Web.Api.FormFile.Extension">
+            <summary>
+            Gets the file extension.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.FromFormExAttribute">
+            <summary>
+            Defines a <see cref="T:Microsoft.AspNetCore.Mvc.ModelBinderAttribute"/> object to deserialize the values from form.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.FromFormExAttribute.#ctor(System.Boolean)">
+            <summary>
+            Initialize a <see cref="T:C1.Web.Api.FromFormExAttribute"/> instance.
+            </summary>
+            <param name="checkPrefix">A bool value indicates whether with prefix or without.</param>
+        </member>
+        <member name="M:C1.Web.Api.HttpExtensions.GetAcceptCulture(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Gets the culture from Accept-Language header.
+            </summary>
+            <param name="request"></param>
+            <returns>The valid culture with highest quality.</returns>
+            <remarks>
+            The Accept-Language header is passed from client, like "en,zh-CN;q=0.8,zh;q=0.6".
+            </remarks>
+        </member>
+        <member name="M:C1.Web.Api.HttpExtensions.LanguageWithQuality.Parse(System.String)">
+            <summary>
+            Parse the language string with quality.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.ImportSourceModelBinder">
+            <summary>
+            ModelBinder for uploaded file as import source.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.ImportSourceModelBinder.BindModelAsync(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext)">
+            <summary>
+            Binds the model to a value by using the binding context.
+            </summary>
+            <param name="bindingContext">The binding context.</param>
+            <returns>The binding result.</returns>
+        </member>
+        <member name="T:C1.Web.Api.ImportModelBinderAttribute">
+            <summary>
+            An attribute to apply to action parameters for model binding for import.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.ImportModelBinderAttribute.#ctor">
+            <summary>
+            The constructor of ImportModelBinderAttribute class.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Owin">
+            <summary>
+            Owin utility functions.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Owin.GetApplicationRoot">
+            <summary>
+            Gets the root directory of the application.
+            </summary>
+            <returns>The root directory.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Owin.MapPath(System.String)">
+            <summary>
+            Gets the physical directory of a path.
+            </summary>
+            <param name="path">A path.</param>
+            <returns>The physical directory.</returns>
+        </member>
+        <member name="T:C1.Web.Api.RequestModelBinder`1">
+            <summary>
+            The model binder for the parameter of C1 Web API action.
+            </summary>
+            <typeparam name="T">The type of the models</typeparam>
+        </member>
+        <member name="M:C1.Web.Api.RequestModelBinder`1.BindModelAsync(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext)">
+            <summary>
+            Async function to bind to a particular model.
+            </summary>
+            <param name="bindingContext">The binding context which has the object to be bound.</param>
+            <returns>
+            A Task which on completion returns a 
+            Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult which represents
+            the result of the model binding process.
+            </returns>
+            <remarks>
+            A null return value means that this model binder was not able to handle the request.
+            Returning null ensures that subsequent model binders are run. If a non null value
+            indicates that the model binder was able to handle the request.
+            </remarks>
+        </member>
+        <member name="T:C1.Web.Api.StatusCodeExceptionFilterAttribute">
+            <summary>
+            Filter the <see cref="T:C1.Web.Api.StatusCodeException"/> and return the response with specific status code.
+            </summary>
+            <remarks>
+            In ASPNET, it can filter the exception on executing the action and result (IHttpActionResult.ExecuteAsync).
+            In ASPNETCORE, it can only filter the exception on excuting the action.
+            </remarks>
+        </member>
+        <member name="T:C1.Web.Api.StringModelBinder">
+            <summary>
+            Model binder for return raw string value.
+            </summary>
+            <remarks>
+            For the default model binder, the empty string will be converted to null.
+            This model binder will keep the raw string value, including empty string.
+            </remarks>
+        </member>
+        <member name="M:C1.Web.Api.StringModelBinder.BindModelAsync(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext)">
+            <summary>
+            Binds the model to a value by using the binding context.
+            </summary>
+            <param name="bindingContext">The binding context.</param>
+            <returns>The binding result.</returns>
+        </member>
+        <member name="T:C1.Web.Api.Configuration.Manager`1">
+            <summary>
+            The base Manager class. It is used to manage the specified type instances.
+            </summary>
+            <typeparam name="T">The type of the instance which is managed.</typeparam>
+        </member>
+        <member name="P:C1.Web.Api.Configuration.Manager`1.Items">
+            <summary>
+            Gets the map of the items which are maintained.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Configuration.Manager`1.Contains(System.String)">
+            <summary>
+            Gets a boolean value which indicates whether the key exists in the manager.
+            </summary>
+            <param name="key">The item key.</param>
+            <returns>A boolean value which indicates whether the key exists in the manager.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Configuration.Manager`1.Get(System.String)">
+            <summary>
+            Gets the instance which is mapped to the specified key.
+            </summary>
+            <param name="key">The item key.</param>
+            <returns>The item.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Configuration.Manager`1.TryGet(System.String,`0@)">
+            <summary>
+            Try to get the instance which is mapped to the specified key.
+            </summary>
+            <param name="key">The item key.</param>
+            <param name="value">The item</param>
+            <returns>true if contains an element with the specified key; otherwise, false.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Configuration.Manager`1.Add(System.String,`0)">
+            <summary>
+            Add item with the key to the manager.
+            </summary>
+            <param name="key">The item key.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:C1.Web.Api.Configuration.Manager`1.Remove(System.String)">
+            <summary>
+            Remove the item with the specified key.
+            </summary>
+            <param name="key">The item key.</param>
+        </member>
+        <member name="T:C1.Web.Api.Data.DataProviderManager">
+            <summary>
+            The manager of data provider.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Data.DataProviderManager.Current">
+            <summary>
+            Gets or sets the current DataProviderManager.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Data.DataProviderManager.Read(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the data by specified name and arguments.
+            </summary>
+            <param name="name">The name</param>
+            <param name="args">The arguments</param>
+            <returns>The data</returns>
+        </member>
+        <member name="T:C1.Web.Api.Data.IDataProvider">
+            <summary>
+            The base class of data provider.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Data.IDataProvider.Read(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Read data.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns>The data.</returns>
+        </member>
+        <member name="T:C1.Web.Api.Data.ItemsSourceDataProvider">
+            <summary>
+            The data provider which can provider items as the data source.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Data.ItemsSourceDataProvider.#ctor(System.Func{System.Collections.IEnumerable})">
+            <summary>
+            Creates an <see cref="T:C1.Web.Api.Data.ItemsSourceDataProvider"/> with data reader.
+            </summary>
+            <param name="reader">A delegate indicates the data reader.</param>
+        </member>
+        <member name="M:C1.Web.Api.Data.ItemsSourceDataProvider.#ctor(System.Collections.IEnumerable)">
+            <summary>
+            Creates an <see cref="T:C1.Web.Api.Data.ItemsSourceDataProvider"/> with items.
+            </summary>
+            <param name="items">The items.</param>
+        </member>
+        <member name="M:C1.Web.Api.Data.ItemsSourceDataProvider.Read(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Read data.
+            </summary>
+            <param name="args">The arguments.</param>
+            <returns>The data.</returns>
+        </member>
+        <member name="T:C1.Web.Api.LicenseDetector">
+            <summary>
+            Define a class for detecting license.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.LicenseDetector.#ctor">
+            <summary>
+            The constructor.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.LicenseManager">
+            <summary>
+            The license manager.
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.LicenseManager.Key">
+            <summary>
+            The run time license key.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Localization.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.EvaluationMessage">
+            <summary>
+              Looks up a localized string similar to ComponentOne ASP.NET Web API (Evaluation Version).
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.FileNotFound">
+            <summary>
+              Looks up a localized string similar to Cannot find the file: {0}..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.NotFound">
+            <summary>
+              Looks up a localized string similar to Cannot find {0}..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.StorageNameNotFound">
+            <summary>
+              Looks up a localized string similar to Cannot find the storage name {0}.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.FileReadOnly">
+            <summary>
+              Looks up a localized string similar to The file "{0}" is read only..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.SourceCannotNull">
+            <summary>
+              Looks up a localized string similar to Source cannot be null.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.SourceNotSerializable">
+            <summary>
+              Looks up a localized string similar to Source is not serializable.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.CannotReadRequestData">
+            <summary>
+              Looks up a localized string similar to Cannot read data from the request..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.FileExists">
+            <summary>
+              Looks up a localized string similar to The file "{0}" already exists..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.MissingRoutePrefix">
+            <summary>
+            Looks up a localized string similar to Missing RoutePrefix attribute on type '{0}'..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.MissingPathRoute">
+            <summary>
+            Looks up a localized string similar to Missing PathRoute attribute on method '{0}'..
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Localization.Resources.MissingMethodInClass">
+            <summary>
+            Looks up a localized string similar to Cannot find method '{0}' in type '{1}'..
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.ExportFileType">
+            <summary>
+            Supported export file types
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.ExportFileType.Xls">
+            <summary>
+            Biff8 (Office Excel 97-2003 format)
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.ExportFileType.Xlsx">
+            <summary>
+            OpenXML (Office Excel 2007+ format)
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.ExportFileType.Csv">
+            <summary>
+            Comma Separated Values
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.ExportFileType.Pdf">
+            <summary>
+            Adobe PDF (Portable Document Format)
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.ExportFileType.Png">
+            <summary>
+            Portable Network Graphics
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.ExportFileType.Jpeg">
+            <summary>
+            Joint Photographic Experts Group
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.ExportFileType.Bmp">
+            <summary>
+            Bitmap
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.ExportFileType.Gif">
+            <summary>
+            Graphic Interchange Format
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.ExportFileType.Tiff">
+            <summary>
+            Tagged Image File Format
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.ExportFileType.Json">
+            <summary>
+            Json format
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.ExportFileType.Xml">
+            <summary>
+            Xml format
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.ExportFileTypeExtensions.ToFileExtension(C1.Web.Api.ExportFileType)">
+            <summary>
+            Gets file extension for ExportFileType enum
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.ExportFileTypeExtensions.ToMediaType(C1.Web.Api.ExportFileType)">
+            <summary>
+            Gets mime type for ExportFileType enum
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.ExportFileTypeExtensions.TryGetMediaType(System.String,System.String@)">
+            <summary>
+            Gets mime type for file extension
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.ExportFileTypeExtensions.ToImageFormat(C1.Web.Api.ExportFileType)">
+            <summary>
+            Returns BCL ImageType for a given ExportFileType.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.ExportSource">
+            <summary>
+            The exchange data model used for sending export requests.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.ExportSource.FileName">
+            <summary>
+            Gets or sets the exported file name.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.ExportSource.Type">
+            <summary>
+            Gets or sets the exported file type.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.IExporterSource">
+            <summary>
+            The source for exporter.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.IExporterSource.CreateExporter">
+            <summary>
+            Create the exporter of this source.
+            </summary>
+            <returns>The exporter.</returns>
+        </member>
+        <member name="T:C1.Web.Api.ImportSource">
+            <summary>
+            The wrapper of uploaded file as import source.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.ImportSource.FileName">
+            <summary>
+            The file name from content dispostion.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.ImportSource.#ctor(System.String,System.IO.Stream)">
+            <summary>
+            Create an ImportSource instance.
+            </summary>
+            <param name="fileName">The import file name.</param>
+            <param name="fileStream">The import file stream.</param>
+        </member>
+        <member name="M:C1.Web.Api.ImportSource.GetFileStream">
+            <summary>
+            Gets the file content stream.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:C1.Web.Api.Storage.BaseStorage">
+            <summary>
+            The base class of storage.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.BaseStorage.#ctor(System.String)">
+            <summary>
+            Create a BaseStorage with name.
+            </summary>
+            <param name="name">The name</param>
+        </member>
+        <member name="P:C1.Web.Api.Storage.BaseStorage.Name">
+            <summary>
+            Gets the name.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Storage.BaseDiskStorage">
+            <summary>
+            The base class of disk storage.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.BaseDiskStorage.#ctor(System.String,System.String)">
+            <summary>
+            Create a BaseDiskStorage by specified name and the disk path.
+            </summary>
+            <param name="name">The name</param>
+            <param name="path">The disk path</param>
+        </member>
+        <member name="P:C1.Web.Api.Storage.BaseDiskStorage.Path">
+            <summary>
+            Gets the disk path.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Storage.DiskStorageProvider">
+            <summary>
+            The disk storage provider.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.DiskStorageProvider.#ctor(System.String)">
+            <summary>
+            Creates a <see cref="T:C1.Web.Api.Storage.DiskStorageProvider"/> with disk path which is used as the root path.
+            </summary>
+            <param name="root">The disk path which is used as the root path.</param>
+        </member>
+        <member name="P:C1.Web.Api.Storage.DiskStorageProvider.Root">
+            <summary>
+            Gets the disk path which is used as the root path.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.DiskStorageProvider.GetDirectoryStorage(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the <see cref="T:C1.Web.Api.Storage.IDirectoryStorage"/> with specified name and arguments.
+            </summary>
+            <param name="name">The name of the <see cref="T:C1.Web.Api.Storage.IDirectoryStorage"/>.</param>
+            <param name="args">The arguments</param>
+            <returns>The <see cref="T:C1.Web.Api.Storage.IDirectoryStorage"/>.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.DiskStorageProvider.GetFileStorage(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the <see cref="T:C1.Web.Api.Storage.IFileStorage"/> with specified name and arguments.
+            </summary>
+            <param name="name">The name of the <see cref="T:C1.Web.Api.Storage.IFileStorage"/>.</param>
+            <param name="args">The arguments</param>
+            <returns>The <see cref="T:C1.Web.Api.Storage.IFileStorage"/>.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.FileDiskStorage.CreateFolder">
+            <summary>
+            Create new folder with the specified path
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.FileDiskStorage.List">
+            <summary>
+            Gets all files and folders within the specified path.
+            </summary>
+            <returns>files and folders within the specified path</returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.FileDiskStorage.MoveFile">
+            <summary>
+            Move files from current path to destination path
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Storage.IDirectoryStorage">
+            <summary>
+            The directory storage interface.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.IDirectoryStorage.GetFiles(System.Boolean,System.String)">
+            <summary>
+            Gets files in this directory.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.IDirectoryStorage.GetDirectories(System.Boolean,System.String)">
+            <summary>
+            Gets directories in this directory.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.IDirectoryStorage.Create">
+            <summary>
+            Creates the directory.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.IDirectoryStorage.Delete(System.Boolean)">
+            <summary>
+            Delete the directory from storage.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Storage.IFileStorage">
+            <summary>
+            The file storage interface.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.IFileStorage.ReadOnly">
+            <summary>
+            Determines whether the specified file is read only.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.IFileStorage.Read">
+            <summary>
+            Read the file stream.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.IFileStorage.Write(System.IO.Stream)">
+            <summary>
+            Write a stream to file, if the file already exists, it is overwritten.
+            </summary>
+            <param name="stream">The file stream</param>
+        </member>
+        <member name="M:C1.Web.Api.Storage.IFileStorage.Delete">
+            <summary>
+            Delete the file from storage.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Storage.IStorage">
+            <summary>
+            The storage interface.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.IStorage.Name">
+            <summary>
+            Gets the name of storage.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.IStorage.Exists">
+            <summary>
+            Determines whether the specified file exists.
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Storage.IStorageProvider">
+            <summary>
+            The base class of the storage provider.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.IStorageProvider.GetFileStorage(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the <see cref="T:C1.Web.Api.Storage.IFileStorage"/> with specified name and arguments.
+            </summary>
+            <param name="name">The name of the <see cref="T:C1.Web.Api.Storage.IFileStorage"/>.</param>
+            <param name="args">The arguments</param>
+            <returns>The <see cref="T:C1.Web.Api.Storage.IFileStorage"/>.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.IStorageProvider.GetDirectoryStorage(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the <see cref="T:C1.Web.Api.Storage.IDirectoryStorage"/> with specified name and arguments.
+            </summary>
+            <param name="name">The name of the <see cref="T:C1.Web.Api.Storage.IDirectoryStorage"/>.</param>
+            <param name="args">The arguments</param>
+            <returns>The <see cref="T:C1.Web.Api.Storage.IDirectoryStorage"/>.</returns>
+        </member>
+        <member name="T:C1.Web.Api.Storage.Legacy.ICloudStorage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.Legacy.ICloudStorage.List">
+            <summary>
+            List all files and folders.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.Legacy.ICloudStorage.MoveFile">
+            <summary>
+            Move files from current path to destination path
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.Legacy.ICloudStorage.CreateFolder">
+            <summary>
+            Create new folder with the specified path
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Storage.ListResult">
+            <summary>
+            Class for DeserializeObject
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.ListResult.ItemID">
+            <summary>
+            File ID
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.ListResult.Name">
+            <summary>
+            File type
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.ListResult.Type">
+            <summary>
+            File type
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.ListResult.Size">
+            <summary>
+            File Size
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.ListResult.ModifiedDate">
+            <summary>
+            Last Modified Date
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Storage.ResultType">
+            <summary>
+            Class for DeserializeObject
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Storage.ResultType.Folder">
+            <summary>
+            Folder
+            </summary>
+        </member>
+        <member name="F:C1.Web.Api.Storage.ResultType.File">
+            <summary>
+            File
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Storage.Folder">
+            <summary>
+            Class for DeserializeObject
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.Folder.folderType">
+            <summary>
+            Folder type
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Storage.Value">
+            <summary>
+            Class for DeserializeObject
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.Value.name">
+            <summary>
+            Folder Name
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.Value.folder">
+            <summary>
+            Folder reference
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.Value.size">
+            <summary>
+             Size
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.Value.lastModifiedDateTime">
+            <summary>
+             lastModifiedDateTime
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Storage.RootObject">
+            <summary>
+            Class for DeserializeObject
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.RootObject.value">
+            <summary>
+            List of Value class
+            </summary>
+        </member>
+        <member name="T:C1.Web.Api.Storage.StorageController">
+            <summary>
+            Controller for Storage Web API.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.StorageController.GetFile(System.String,System.String)">
+            <summary>
+            Gets the file with the specified path.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="subpath">The file name</param>
+            <returns>The result which contains the file.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.StorageController.GetListFileName(System.String,System.String)">
+            <summary>
+            Gets all files and folders within the specified path.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="subpath">The file name</param>
+            <returns>The result which contains the files and folders at json type.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.StorageController.UploadFile(System.String,C1.Web.Api.Storage.UploadRequest,System.String)">
+            <summary>
+            Uploads file with the specified path.
+            </summary>
+            <param name="path">The path which the uploaded file is put.</param>
+            <param name="subpath">The file name</param>
+            <param name="re">The upload request.</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.StorageController.DeleteFile(System.String,System.String)">
+            <summary>
+            Deletes the file with the specified path.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="subpath">The file name</param>
+            <returns>The result.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.StorageController.MoveFile(System.String,System.String)">
+            <summary>
+            Move files from current path to destination path
+            </summary>
+            <param name="path">The path.</param>
+            <param name="subpath">The file name</param>
+            <returns></returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.StorageController.CreateFolder(System.String,System.String)">
+            <summary>
+            Create new folder with path
+            </summary>
+            <param name="path">The path.</param>
+            <param name="subpath">The sub path.</param>
+            <returns></returns>
+        </member>
+        <member name="T:C1.Web.Api.Storage.StorageProviderManager">
+            <summary>
+            This manager mantains multiple <see cref="T:C1.Web.Api.Storage.IStorageProvider"/>.
+            </summary>
+            <remarks>
+            If add an <see cref="T:C1.Web.Api.Storage.IStorageProvider"/> with empty string key, this 
+            <see cref="T:C1.Web.Api.Storage.IStorageProvider"/> will be treated as the default provider.
+            When no macthed provider are found, the default provider will be used to 
+            get the storage.
+            </remarks>
+        </member>
+        <member name="P:C1.Web.Api.Storage.StorageProviderManager.Current">
+            <summary>
+            Gets the <see cref="T:C1.Web.Api.Storage.StorageProviderManager"/> instance.
+            </summary>
+        </member>
+        <member name="M:C1.Web.Api.Storage.StorageProviderManager.GetProvider(System.String,System.String@,System.String@)">
+            <summary>
+            Gets the <see cref="T:C1.Web.Api.Storage.IStorageProvider"/> with the specified path.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="key">The key of the <see cref="T:C1.Web.Api.Storage.IStorageProvider"/>.</param>
+            <param name="storageName">The storage name which doesn't include the key of the <see cref="T:C1.Web.Api.Storage.IStorageProvider"/>.</param>
+            <returns>The matched <see cref="T:C1.Web.Api.Storage.IStorageProvider"/>.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.StorageProviderManager.GetDirectoryStorage(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the <see cref="T:C1.Web.Api.Storage.IDirectoryStorage"/> with specified path and arguments.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="args">The arguments.</param>
+            <returns>The <see cref="T:C1.Web.Api.Storage.IDirectoryStorage"/>.</returns>
+        </member>
+        <member name="M:C1.Web.Api.Storage.StorageProviderManager.GetFileStorage(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the <see cref="T:C1.Web.Api.Storage.IFileStorage"/> with specified path and arguments.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="args">The arguments.</param>
+            <returns>The <see cref="T:C1.Web.Api.Storage.IFileStorage"/>.</returns>
+        </member>
+        <member name="T:C1.Web.Api.Storage.UploadRequest">
+            <summary>
+            The request data of uploading file to storage.
+            </summary>
+        </member>
+        <member name="P:C1.Web.Api.Storage.UploadRequest.File">
+            <summary>
+            Gets or sets the file which is posted from client side.
+            </summary>
+        </member>
+        <member name="T:C1.Configuration.ConditionalProvider`1">
+            <summary>
+            Defines the class for providing the specified type object conditionally.
+            </summary>
+            <typeparam name="T">The type of the object that current provides</typeparam>
+        </member>
+        <member name="M:C1.Configuration.ConditionalProvider`1.Supports(System.String)">
+            <summary>
+            Gets a boolean indicates whether current provider recognizes the name.
+            </summary>
+            <param name="name">The name of the object</param>
+            <returns>A boolean indicates whether current provider recognizes the name.</returns>
+        </member>
+        <member name="M:C1.Configuration.ConditionalProvider`1.GetObject(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the object with the specified name and arguments.
+            </summary>
+            <param name="name">The name</param>
+            <param name="args">The arguments</param>
+            <returns>The object</returns>
+        </member>
+        <member name="M:C1.Configuration.ConditionalProvider`1.GetObject(System.String)">
+            <summary>
+            Gets the object with the specified name.
+            </summary>
+            <param name="name">The name</param>
+            <returns>The object</returns>
+        </member>
+        <member name="T:C1.Configuration.ConditionalProviderManager`2">
+            <summary>
+            The manager of ConditionalProvider.
+            </summary>
+            <typeparam name="T">The type of object</typeparam>
+            <typeparam name="TP">The type of ConditionalProvider</typeparam>
+        </member>
+        <member name="M:C1.Configuration.ConditionalProviderManager`2.GetObject(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the object with the specified name and arguments.
+            </summary>
+            <param name="name">The name</param>
+            <param name="args">The arguments</param>
+            <returns>The object</returns>
+        </member>
+        <member name="M:C1.Configuration.ConditionalProviderManager`2.GetObject(System.String)">
+            <summary>
+            Gets the object with the specified name.
+            </summary>
+            <param name="name">The name</param>
+            <returns>The object</returns>
+        </member>
+        <member name="P:C1.Configuration.ConditionalProviderManager`2.Providers">
+            <summary>
+            Gets the providers.
+            </summary>
+        </member>
+        <member name="T:C1.Data.DataProvider">
+            <summary>
+            The base class of data provider.
+            </summary>
+        </member>
+        <member name="T:C1.Data.DataProviderManager">
+            <summary>
+            The manager of data provider.
+            </summary>
+        </member>
+        <member name="P:C1.Data.DataProviderManager.Current">
+            <summary>
+            Gets or sets the current DataProviderManager.
+            </summary>
+        </member>
+        <member name="M:C1.Data.DataProviderManager.GetData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the data by specified name and arguments.
+            </summary>
+            <param name="name">The name</param>
+            <param name="args">The arguments</param>
+            <returns>The data</returns>
+        </member>
+        <member name="T:C1.Data.DataSetProvider">
+            <summary>
+            The dataset provider.
+            </summary>
+        </member>
+        <member name="M:C1.Data.DataSetProvider.Supports(System.String)">
+            <summary>
+            Gets a boolean indicates whether current provider recognizes the name.
+            </summary>
+            <param name="name">The name of the object</param>
+            <returns>A boolean indicates whether current provider recognizes the name.</returns>
+        </member>
+        <member name="M:C1.Data.DataSetProvider.GetObject(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the IEnumerable data with the specified name and arguments.
+            </summary>
+            <param name="name">The name</param>
+            <param name="args">The arguments</param>
+            <returns>The IEnumerable data</returns>
+        </member>
+        <member name="P:C1.Data.DataSetProvider.DataSets">
+            <summary>
+            The collection of dataset.
+            </summary>
+        </member>
+        <member name="T:C1.Util.Licensing.BaseLicenseDetector">
+            <summary>
+            Define a class for detecting license.
+            </summary>
+        </member>
+        <member name="M:C1.Util.Licensing.BaseLicenseDetector.#ctor">
+            <summary>
+            The constructor.
+            </summary>
+        </member>
+        <member name="T:C1.Util.Licensing.LicenseException">
+            <summary>
+            The exception for licensing.
+            </summary>
+        </member>
+        <member name="M:C1.Util.Licensing.LicenseException.#ctor(System.String)">
+            <summary>
+            Create a LicenseException with message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:C1.Util.Licensing.C1ProductInfoAttribute">
+            <summary>
+            Attribute used to attach licensing/product information to assemblies.
+            </summary>
+        </member>
+        <member name="P:C1.Util.Licensing.BaseLicenseProviderAttribute.RunTimeKey">
+            <summary>
+            Gets the run-time key which is set by user.
+            </summary>
+        </member>
+        <member name="P:C1.Util.Licensing.BaseLicenseProviderAttribute.RunTimeKeys">
+            <summary>
+            Gets the run-time keys that includes the key which is set by user
+            and the keys which are embedded in the application assembly.
+            </summary>
+        </member>
+        <member name="T:C1.Util.Licensing.ProductLicense">
+            <summary>
+            Represents a license for a product (e.g. C1BarCode, C1Studio Enterprise).
+            
+            Provides methods for:
+            - generating new license keys (administrative task)
+            - checking license key validity (used by installer and products)
+            - generating and checking runtime keys (used by products)
+            - installing/uninstalling licenses (used by installer)
+            
+            The install/uninstall code requires elevated permissions, and is
+            used only by setups and utilities (not by controls). The code is 
+            implemented in the ProductLicense.Installer.cs, which controls should
+            not include since it won't be useful to them.
+            
+            When a product is sold, we send the user a license KEY. The user installs
+            a license on his machine by providing his name, his company name, and the 
+            key.
+            
+            The <see cref="P:C1.Util.Licensing.ProductLicense.Key"/> is a string in the following format:
+            
+                AAQYYCC-XX-NNNNNN-DD-DZZZZZZ
+                
+            Where:
+            
+                AA:     Product code (should match one of the products in the 
+                        product catalog (see ProductInformation.GetProductCatalog()).
+                Q:      Quarter when the license key was issued (1, 2, or 3)
+                YY:     Year when the license key was issued (e.g., 10 for 2010)
+                CC:     Order code, two chars that indicate whether this is a 
+                        new sale, upgrade, renewal, special offer, etc.
+                XX:     Hash code to ensure key validity.
+                NNNNNN: Unique serial number.
+                DDD:    Vendor code, three chars
+                ZZZZZZ: Combination of random numbers for uniqueness and extra hash.
+                
+            </summary>
+        </member>
+        <member name="T:C1.Storage.IFileStorage">
+            <summary>
+            The file storage interface.
+            </summary>
+        </member>
+        <member name="T:C1.Storage.IStorage">
+            <summary>
+            The storage interface.
+            </summary>
+        </member>
+        <member name="T:C1.Storage.StorageProvider">
+            <summary>
+            The base class of the storage provider.
+            </summary>
+        </member>
+        <member name="M:C1.Storage.StorageProvider.GetFileStorage(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the file storage with specified name and arguments.
+            </summary>
+            <param name="name">The name of the file storage</param>
+            <param name="args">The arguments</param>
+            <returns>The file storage</returns>
+        </member>
+        <member name="T:C1.Storage.StorageProviderManager">
+            <summary>
+            The storage provider manager.
+            </summary>
+        </member>
+        <member name="P:C1.Storage.StorageProviderManager.Current">
+            <summary>
+            Gets or sets the current storage provider manager.
+            </summary>
+        </member>
+        <member name="M:C1.Storage.StorageProviderManager.GetStorage(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the storage with specified name and arguments.
+            </summary>
+            <param name="name">The name of storage</param>
+            <param name="args">The arguments</param>
+            <returns>The storage</returns>
+        </member>
+        <member name="M:C1.Storage.StorageProviderManager.GetFileStorage(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the file storage with specified name and arguments.
+            </summary>
+            <param name="name">The name of file storage</param>
+            <param name="args">The arguments</param>
+            <returns>The file storage</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Builder.DataProviderManagerExtensions">
+            <summary>
+            The extensions of <see cref="T:C1.Web.Api.Data.DataProviderManager"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.DataProviderManagerExtensions.AddItemsSource(C1.Web.Api.Data.DataProviderManager,System.String,System.Collections.IEnumerable)">
+            <summary>
+            Add an <see cref="T:C1.Web.Api.Data.ItemsSourceDataProvider"/> with key and items.
+            </summary>
+            <param name="manager">The <see cref="T:C1.Web.Api.Data.DataProviderManager"/>.</param>
+            <param name="key">The key.</param>
+            <param name="items">The data source.</param>
+            <returns>The <see cref="T:C1.Web.Api.Data.DataProviderManager"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.DataProviderManagerExtensions.AddItemsSource(C1.Web.Api.Data.DataProviderManager,System.String,System.Func{System.Collections.IEnumerable})">
+            <summary>
+            Add an <see cref="T:C1.Web.Api.Data.ItemsSourceDataProvider"/> with key and items getter.
+            </summary>
+            <param name="manager">The <see cref="T:C1.Web.Api.Data.DataProviderManager"/>.</param>
+            <param name="key">The key.</param>
+            <param name="itemsGetter">The delegate of getting data source.</param>
+            <returns>The <see cref="T:C1.Web.Api.Data.DataProviderManager"/>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Builder.AppBuilderUseExtensions">
+            <summary>
+            Extension methods for <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.AppBuilderUseExtensions.UseDataProviders(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Uses <see cref="T:C1.Web.Api.Data.DataProviderManager"/>.
+            </summary>
+            <param name="app">The application builder.</param>
+            <returns>The <see cref="T:C1.Web.Api.Data.DataProviderManager"/>.</returns>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.AppBuilderUseExtensions.UseStorageProviders(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Uses <see cref="T:C1.Web.Api.Storage.StorageProviderManager"/>.
+            </summary>
+            <param name="app">The application builder.</param>
+            <returns>The <see cref="T:C1.Web.Api.Storage.StorageProviderManager"/>.</returns>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Builder.StorageProviderManagerExtensions">
+            <summary>
+            The extensions of <see cref="T:C1.Web.Api.Storage.StorageProviderManager"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.StorageProviderManagerExtensions.AddDiskStorage(C1.Web.Api.Storage.StorageProviderManager,System.String,System.String)">
+            <summary>
+            Add a <see cref="T:C1.Web.Api.Storage.DiskStorageProvider"/> to <see cref="T:C1.Web.Api.Storage.StorageProviderManager"/> with the specified key and the disk path.
+            </summary>
+            <param name="manager">The <see cref="T:C1.Web.Api.Storage.StorageProviderManager"/>.</param>
+            <param name="key">The key.</param>
+            <param name="diskPath">The disk path.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
