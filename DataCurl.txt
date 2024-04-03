@@ -1,0 +1,29 @@
+Container Curl
+
+=== GET ===
+
+Get existing Data
+curl --location 'http://localhost:57696/api/somiod/teste/teste/data/teste'
+
+Discover All  
+#TODO
+
+====
+
+== POST ===
+Create new Data for existing container and app
+ 
+curl --location 'http://localhost:57696/api/somiod/teste/teste/data/' \
+--header 'Content-Type: application/xml' \
+--header 'res_type: data' \
+--data '<Data xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<name>testData2</name>
+<creation_dt>2023-01-23</creation_dt>
+<content>ContentTest</content>
+</Data>'
+
+== DELETE ===
+
+Delete Data
+
+curl --location --request DELETE 'http://localhost:57696/api/somiod/teste/teste/data/teste'

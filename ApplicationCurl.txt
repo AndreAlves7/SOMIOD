@@ -1,0 +1,61 @@
+Application Curl
+
+=== GET ===
+
+curl --location 'http://localhost:57696/api/somiod/teste' \
+--header 'Accept: application/xml' \
+--header 'Content-Type: application/xml'
+
+Discover All Containers 
+curl --location 'http://localhost:57696/api/somiod' \
+--header 'Content-Type: application/xml' \
+--header 'somiod-discover: container'
+
+Discover All Apps
+curl --location 'http://localhost:57696/api/somiod' \
+--header 'Content-Type: application/xml' \
+--header 'somiod-discover: application'
+
+
+Discover All application Containers
+curl --location 'http://localhost:57696/api/somiod/teste' \
+--header 'somiod-discover: container'
+====
+
+== POST ===
+Create new Application
+ 
+curl --location 'http://localhost:57696/api/somiod' \
+--header 'Content-Type: application/xml' \
+--header 'res_type: application' \
+--data '<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <name>teste</name>
+  <creation_dt>2023-01-05</creation_dt>
+</Application>
+'	
+
+
+== PUT ===
+Update existing Application
+
+curl --location --request PUT 'http://localhost:57696/api/somiod/teste' \
+--header 'Content-Type: application/xml' \
+--header 'res_type: application' \
+--data '<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <name>teste3New</name>
+  <creation_dt>2023-01-25</creation_dt>
+</Application>
+'
+
+== DELETE ===
+
+Delete Application with connected Container, Data and subscription
+
+curl --location --request DELETE 'http://localhost:57696/api/somiod/teste' \
+--header 'Content-Type: application/xml' \
+--header 'res_type: application' \
+--data '<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <name>teste3New</name>
+  <creation_dt>2023-01-25</creation_dt>
+</Application>
+'

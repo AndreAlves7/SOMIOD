@@ -1,0 +1,43 @@
+Container Curl
+
+=== GET ===
+
+Get existing Subscription
+
+curl --location 'http://localhost:57696/api/somiod/teste/teste/sub/teste'
+
+Discover All Container subscriptions
+curl --location 'http://localhost:57696/api/somiod/teste/teste' \
+--header 'somiod-discover: subscription'
+
+====
+
+== POST ===
+Create new Subscription for MQTT endpoit
+ 
+curl --location 'http://localhost:57696/api/somiod/teste/teste/sub/' \
+--header 'Content-Type: application/xml' \
+--header 'res_type: subscription' \
+--data '<Subscription xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<name>testData2</name>
+<creation_dt>2023-01-23</creation_dt>
+<event_>1</event_>
+<endpoint>mqtt://127.0.0.1:1883</endpoint>
+</Subscription>'
+
+Create new Subscription for HTTP endpoint
+ 
+curl --location 'http://localhost:57696/api/somiod/teste/teste/sub/' \
+--header 'Content-Type: application/xml' \
+--data '<Subscription xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<name>testData2</name>
+<creation_dt>2023-01-23</creation_dt>
+<event_>1</event_>
+<endpoint>http://localhost:57696/api/somiod/</endpoint>
+</Subscription>'
+
+== DELETE ===
+
+Delete Subscription
+
+curl --location --request DELETE 'http://localhost:57696/api/somiod/teste1/teste12/sub/testData2'
